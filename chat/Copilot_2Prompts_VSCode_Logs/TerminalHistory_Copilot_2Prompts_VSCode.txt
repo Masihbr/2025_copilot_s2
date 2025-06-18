@@ -1,0 +1,105 @@
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend> npm init -y && npm install express mongoose dotenv cors swagger-ui-express yamljs && npm install --save-dev typescript ts-node @types/node @types/express @types/cors @types/swagger-ui-express
+Wrote to C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend\package.json:
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.  
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 101 packages, and audited 102 packages in 6s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+added 32 packages, and audited 134 packages in 3s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend> ^C
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend> npm install google-auth-library @types/express  
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 30 packages, and audited 164 packages in 2s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend> npm install google-auth-library @types/express  
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 30 packages, and audited 164 packages in 2s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+dio\backend> npm install google-auth-library @types/express  
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 30 packages, and audited 164 packages in 2s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+m's native DOMException instead
+
+added 30 packages, and audited 164 packages in 2s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+added 30 packages, and audited 164 packages in 2s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+added 30 packages, and audited 164 packages in 2s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStu
+
+found 0 vulnerabilities
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStufound 0 vulnerabilities
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStuPS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend> ^C
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend> npm install axios @types/axios
+
+added 12 packages, and audited 176 packages in 1s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\masih\Projects\Copilot_2Prompts_VSCode_AndroidStudio\backend>
