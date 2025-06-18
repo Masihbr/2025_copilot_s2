@@ -1,0 +1,246 @@
+openapi: 3.0.3
+info:
+  title: MovieSwipe API
+  version: 1.0.0
+  description: Backend API for MovieSwipe app. All endpoints require Google token verification unless otherwise noted.
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      summary: Health check
+      description: Returns status ok if the server is running.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+  /user/me:
+    get:
+      summary: Get current user info
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User info
+  /user/preferences:
+    post:
+      summary: Set user genre preferences
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                preferences:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Preferences updated
+  /group/create:
+    post:
+      summary: Create a group
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':
+          description: Group created
+  /group/join:
+    post:
+      summary: Join a group by invite code
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inviteCode:
+                  type: string
+      responses:
+        '200':
+          description: Joined group
+  /group/{groupId}:
+    get:
+      summary: Get group info
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: groupId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Group info
+    delete:
+      summary: Delete a group (owner only)
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: groupId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Group deleted
+  /group/{groupId}/recommend:
+    get:
+      summary: Recommend genres for a group
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: groupId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Recommended genres
+  /voting/start:
+    post:
+      summary: Start a voting session
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                movies:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Voting session started
+  /voting/end:
+    post:
+      summary: End a voting session
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+      responses:
+        '200':
+          description: Voting session ended
+  /voting/vote:
+    post:
+      summary: Vote for a movie
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                movieId:
+                  type: string
+                vote:
+                  type: string
+                  enum: [yes, no]
+      responses:
+        '200':
+          description: Vote recorded
+  /voting/results/{sessionId}:
+    get:
+      summary: Get voting results for a session
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: sessionId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Voting results
+  /movie/genres:
+    get:
+      summary: Get movie genres from TMDb
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of genres
+  /movie/discover:
+    get:
+      summary: Discover movies by genres
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: genres
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: page
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Discovered movies
+  /movie/movie/{movieId}:
+    get:
+      summary: Get movie details by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: movieId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Movie details
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
